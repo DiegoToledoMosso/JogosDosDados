@@ -60,7 +60,7 @@
 
                         if (resultado == 6)
                         {
-                            Console.Clear();
+                            
                             Console.WriteLine("------------------------------------");
                             Console.WriteLine("Evento Especial: RODADA EXTRA");
                             Console.WriteLine("------------------------------------");
