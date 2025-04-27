@@ -1,28 +1,58 @@
 ﻿namespace JogosDosDadosConsoleApp
 {
-    /*Versão 1 - Estrutura básica e simulação de dados 
+    /*Versão 2 - Controle da posição do jogador 
         Requisitos:
 
-        Exibir um banner para o jogo de dados
-        Implementar a geração de números aleatórios para simular um dado (1-6)
-        Exibir o resultado do lançamento do dado
-        Permitir que o usuário pressione Enter para lançar o dado
+        Armazenar a posição do jogador na pista e atualizar o valor após o lançamento do dado
+        Exibir a posição atual do jogador na pista
+        Definir a linha de chegada em 30 verificar se o jogador alcançou ou ultrapassou a linha de chegada
+        Permitir o jogador realizar várias jogadas
     */
     internal class Program
     {
         static void Main(string[] args)
         {
+
+            const int limiteLinhaChegada = 30;
+            
+
+            
             while (true)
             {
                 
-                ExibirCabecalho();
+                int posicaoUsario = 0;
+                bool jogoEstaEmAndamento = true;
 
-                
-                int resultado = LancarDado();
 
-                
-                ExibirResultadoSorteio(resultado);
+                while (jogoEstaEmAndamento)
+                {
 
+                    ExibirCabecalho();
+
+
+                    int resultado = LancarDado();
+
+
+                    ExibirResultadoSorteio(resultado);
+
+                    posicaoUsario += resultado;
+
+                    Console.WriteLine("------------------------------------------------");
+
+                    if (posicaoUsario >= limiteLinhaChegada)
+                    {
+                        Console.WriteLine("Parabéns você alcançou a linha de chegada!!");
+                        jogoEstaEmAndamento = false;
+                    }
+                                          
+
+                    else
+                        Console.WriteLine($"O jogador está na posição: {posicaoUsario} de {limiteLinhaChegada}");
+
+
+                    Console.Write("Aperte ENTER se deseja continuar....");
+                    Console.ReadLine();
+                }             
 
                 string opcaoContinuar = MenuContinuar();
 
