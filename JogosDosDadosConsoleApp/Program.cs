@@ -1,18 +1,6 @@
 ﻿namespace JogosDosDadosConsoleApp
 {
-    /*Versão 3 - Incluir o computador como oponente 
-        Requisitos:
-
-        Informar que o computador está jogando
-        Armazenar a posição do computador na pista e atualizar o valor após o lançamento do dado
-        Atualizar a posição do computador após seu lançamento de dado
-        Exibir mensagens informativas quando os eventos ocorrerem
-        Atualizar a posição do jogador conforme as regras dos eventos
-        Exibir a nova posição
-        Verificar se o computador alcançou ou ultrapassou a linha de chegada
-        Informar quem venceu o jogo
-        Implementar turnos alternados entre jogador e computador
-    */
+    
     internal class Program
     {
         static void Main(string[] args)
