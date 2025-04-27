@@ -126,8 +126,7 @@
                         }
 
                         if (resultadoComputador == 6)
-                        {
-                            Console.Clear();
+                        {                            
                             Console.WriteLine("------------------------------------");
                             Console.WriteLine("Evento Especial: RODADA EXTRA");
                             Console.WriteLine("------------------------------------");
@@ -136,7 +135,7 @@
                         }
                         else if (posicaoComputador >= limiteLinhaChegada)
                         {
-                            Console.WriteLine("Parabéns você alcançou a linha de chegada!!");
+                            Console.WriteLine("Que pena!! O computador alcançou a linha de chegada!!");
                             Console.ReadLine();
 
                             jogoEstaEmAndamento = false;
