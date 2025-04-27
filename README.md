@@ -1,6 +1,6 @@
 # Jogo Do Dado
 
-
+![](https://imgur.com/QaGvTOp.gif)
 
 ## Introdução
 
@@ -27,4 +27,8 @@ para avançar em uma pista. O primeiro a alcançar ou ultrapassar a linha de chega
 - Implementar turnos alternados entre jogador e computador
 
 
+
+## Tecnologia
+
+[![My Skills](https://skillicons.dev/icons?i=cs,dotnet,git,github,visualstudio,)](https://skillicons.dev)
 
