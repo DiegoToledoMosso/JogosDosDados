@@ -14,29 +14,60 @@
         {
             while (true)
             {
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("Jogo dos Dados!");
-                Console.WriteLine("------------------------------------------------");
+                
+                ExibirCabecalho();
 
-                Console.WriteLine("Pressione enter para lançar o dado....");
-                Console.ReadLine();
+                
+                int resultado = LancarDado();
 
-                Random geradordeNumeros = new Random();
-
-                int resultado = geradordeNumeros.Next(1, 7);
-
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine($"O valor sorteado foi: {resultado}");
-                Console.WriteLine("------------------------------------------------");
+                
+                ExibirResultadoSorteio(resultado);
 
 
-                Console.WriteLine("Deseja continuar? (S/N) ");
-                string opcaoContinuar = Console.ReadLine()!.ToUpper();
+                string opcaoContinuar = MenuContinuar();
 
                 if (opcaoContinuar != "S")
                     break;
             }
             
         }
+
+        static void ExibirCabecalho ()
+        {
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Jogo dos Dados!");
+            Console.WriteLine("------------------------------------------------");
+
+            Console.WriteLine("Pressione enter para lançar o dado....");
+            Console.ReadLine();
+        }
+
+        static int LancarDado ()
+        {
+            Random geradordeNumeros = new Random();
+
+            int resultado = geradordeNumeros.Next(1, 7);
+
+            return resultado;
+        }
+
+        static void ExibirResultadoSorteio (int resultado)
+        {
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine($"O valor sorteado foi: {resultado}");
+            Console.WriteLine("------------------------------------------------");
+        }
+
+        static string MenuContinuar ()
+        {
+            Console.WriteLine("Deseja continuar? (S/N) ");
+            string opcaoContinuar = Console.ReadLine()!.ToUpper();
+
+            return opcaoContinuar;
+        }
+
+            
+
+
     }
 }
