@@ -21,7 +21,6 @@
                 Jogador computador = new Jogador();
                 computador.nome = "Computador";
 
-
                 while (jogoEstaEmAndamento)
                 {
                     bool usuarioVenceu = usuario.ExecutarRodada();                   
