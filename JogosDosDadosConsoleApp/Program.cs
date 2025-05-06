@@ -14,17 +14,29 @@
                                
                 bool jogoEstaEmAndamento = true;
 
+                Jogador usuario = new Jogador();
+                usuario.nome = "Usuário";
+                Jogador usuarioDois = new Jogador();
+                usuarioDois.nome = "UsuárioDois";
+                Jogador computador = new Jogador();
+                computador.nome = "Computador";
+
 
                 while (jogoEstaEmAndamento)
                 {
-                    bool usuarioVenceu = Usuario.ExecutarRodada();                   
+                    bool usuarioVenceu = usuario.ExecutarRodada();                   
 
                     Console.Write("Aperte ENTER se deseja continuar....");
                     Console.ReadLine();
-                                      
-                    bool computadorVenceu = Computador.ExecutarRodada();
 
-                    if (usuarioVenceu || computadorVenceu)
+                    bool usuarioDoisVenceu = usuarioDois.ExecutarRodada();
+
+                    Console.Write("Aperte ENTER se deseja continuar....");
+                    Console.ReadLine();
+
+                    bool computadorVenceu = computador.ExecutarRodada();
+
+                    if (usuarioVenceu || computadorVenceu || usuarioDoisVenceu)
                         jogoEstaEmAndamento = false;
 
 

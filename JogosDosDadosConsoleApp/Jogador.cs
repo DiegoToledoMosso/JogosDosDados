@@ -1,11 +1,13 @@
-﻿namespace JogosDosDadosConsoleApp;
+﻿
+namespace JogosDosDadosConsoleApp;
 
-public class Usuario
+public class Jogador
 {
-    static int posicao = 0;
-    
+    int posicao = 0;
+    public string nome = "";
 
-    public static bool ExecutarRodada()
+
+    public bool ExecutarRodada()
     {
         bool rodadaExtra;
         bool jogadorVenceu = false;
@@ -15,7 +17,7 @@ public class Usuario
             rodadaExtra = false;
 
 
-            ExibirCabecalho("Usuário");
+            ExibirCabecalho();
 
 
             int resultado = LancarDado();
@@ -52,7 +54,7 @@ public class Usuario
                 Console.WriteLine("------------------------------------");
                 Console.WriteLine("Evento Especial: RODADA EXTRA");
                 Console.WriteLine("------------------------------------");
-                Console.ReadLine(); 
+                Console.ReadLine();
 
                 rodadaExtra = true;
             }
@@ -75,16 +77,16 @@ public class Usuario
 
         return jogadorVenceu;
     }
-    static void ExibirCabecalho(string nomeJogador)
+    void ExibirCabecalho()
     {
         Console.Clear();
         Console.WriteLine("------------------------------------------------");
         Console.WriteLine("Jogo dos Dados!");
         Console.WriteLine("------------------------------------------------");
-        Console.WriteLine($"Turno do(a):  {nomeJogador}");
+        Console.WriteLine($"Turno do(a):  {nome}");
         Console.WriteLine("------------------------------------------------");
 
-        if (nomeJogador != "Computador")
+        if (nome != "Computador")
         {
             Console.WriteLine("Pressione enter para lançar o dado....");
             Console.ReadLine();
@@ -93,7 +95,7 @@ public class Usuario
 
     }
 
-    static int LancarDado()
+    int LancarDado()
     {
         Random geradordeNumeros = new Random();
 
@@ -102,7 +104,7 @@ public class Usuario
         return resultado;
     }
 
-    static void ExibirResultadoSorteio(int resultado)
+    void ExibirResultadoSorteio(int resultado)
     {
         Console.WriteLine("------------------------------------------------");
         Console.WriteLine($"O valor sorteado foi: {resultado}");
